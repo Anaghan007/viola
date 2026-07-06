@@ -2,290 +2,225 @@
 <html lang="en" class="scroll-smooth scroll-pt-40 md:scroll-pt-48">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viola | Premium Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viola | Premium Cafe & Pizzeria</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-  <!-- Tailwind Custom Configuration -->
-  <script>
-    tailwind.config = {
+    <script>
+        tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
                     colors: {
                         brand: {
-                            50: '#F5F0EB',
-                            100: '#E8DDD4',
-                            200: '#D4C5B9',
-                            300: '#C4B0A3',
-                            400: '#B59A8A',
-                            500: '#A68470',
-                            600: '#956E5A',
-                            700: '#7D5646',
-                            800: '#5A3A2E',
-                            900: '#2C1810',
-                            950: '#1A0F0A',
+                            50: '#f5f3f1',
+                            100: '#e6e0d9',
+                            500: '#8c6b5d', // Cafe Brown
+                            600: '#735549',
+                            900: '#2c1e16', // Dark Brown
                         }
                     },
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
                     boxShadow: {
-                        'premium': '0 20px 40px -15px rgba(44,24,16,0.08)',
-                        'premium-hover': '0 30px 60px -15px rgba(44,24,16,0.15)',
-                        'glow': '0 0 20px rgba(166,132,112,0.3)'
+                        'premium': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'premium-hover': '0 30px 60px -15px rgba(140,107,93,0.3)',
+                        'glow': '0 0 20px rgba(140,107,93,0.4)'
                     }
                 }
             }
         }
-  </script>
+    </script>
 
-  <style>
-    body {
-      background-color: #F5F0EB;
-      background-image:
-        radial-gradient(at 0% 0%, hsla(28, 40%, 85%, 0.4) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, hsla(30, 35%, 80%, 0.4) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, hsla(28, 40%, 85%, 0.4) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, hsla(30, 35%, 80%, 0.4) 0px, transparent 50%),
-        linear-gradient(to right, rgba(44, 24, 16, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(44, 24, 16, 0.04) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
-    }
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(28, 40%, 74%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(355, 40%, 83%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(28, 40%, 74%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(355, 40%, 83%, 0.15) 0px, transparent 50%),
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        }
 
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+        .fluid-h1 { font-size: clamp(2.5rem, 5vw + 1rem, 5rem); line-height: 1.1; }
+        .fluid-h2 { font-size: clamp(2rem, 4vw + 1rem, 4rem); line-height: 1.2; }
+        .fluid-p { font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem); line-height: 1.6; }
 
-    .fluid-h1 {
-      font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
-      line-height: 1.1;
-    }
-
-    .fluid-h2 {
-      font-size: clamp(2rem, 4vw + 1rem, 4rem);
-      line-height: 1.2;
-    }
-
-    .fluid-p {
-      font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
-      line-height: 1.6;
-    }
-
-    .filter-btn.active {
-      background-color: #2C1810;
-      color: white;
-    }
-
-    .subcategory-btn.active {
-      background-color: #7D5646;
-      color: white;
-      border-color: #7D5646;
-    }
-
-    @media (max-width: 768px) {
-      footer {
-        padding-bottom: 110px !important;
-      }
-    }
-  </style>
+        @media (max-width: 768px) {
+            footer { padding-bottom: 110px !important; }
+        }
+        
+        /* Custom scrollbar for category filter */
+        .category-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .category-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+            border-radius: 10px;
+        }
+        .category-scroll::-webkit-scrollbar-thumb {
+            background: #d4d4d4; 
+            border-radius: 10px;
+        }
+        .category-scroll::-webkit-scrollbar-thumb:hover {
+            background: #a3a3a3; 
+        }
+    </style>
 </head>
 
-<body class="text-brand-900 relative min-h-screen antialiased selection:bg-brand-600 selection:text-white">
+<body class="text-gray-800 relative min-h-screen antialiased selection:bg-brand-500 selection:text-white">
 
-  <!-- 1. Header -->
-  <div class="fixed w-full top-4 md:top-6 z-50 px-4 sm:px-6 lg:px-8 flex justify-center">
-    <header
-      class="w-full max-w-[1600px] bg-white/80 backdrop-blur-2xl border border-brand-200/60 shadow-[0_8px_30px_rgba(44,24,16,0.08)] rounded-full px-6 py-4 md:py-5 flex justify-between items-center relative transition-all">
-      <a href="#" class="flex-1 flex justify-start items-center gap-3 group">
-        <img src="logo1.png" alt="Viola Pizzeria Logo" class="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x50?text=VIOLA'">
-      </a>
-      <nav
-        class="hidden lg:flex justify-center gap-12 font-bold text-brand-700 text-lg absolute left-1/2 -translate-x-1/2 w-max">
-        <a href="#home" class="scroll-link hover:text-brand-900 transition-colors">Home</a>
-        <a href="#menu" class="scroll-link hover:text-brand-900 transition-colors">Menu</a>
-        <a href="#footer" class="scroll-link hover:text-brand-900 transition-colors">Contact</a>
-      </nav>
-      <div class="flex-1 flex justify-end items-center gap-4">
-        <button onclick="toggleCart()" class="relative flex items-center justify-center bg-brand-900 text-white h-14 w-14 md:h-16 md:w-16 rounded-full hover:bg-brand-700 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group">
+    <div class="fixed w-full top-4 md:top-6 z-50 px-4 sm:px-6 lg:px-8 flex justify-center">
+        <header class="w-full max-w-[1600px] bg-white/70 backdrop-blur-2xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-full px-6 py-4 md:py-5 flex justify-between items-center relative transition-all">
+            <a href="#" class="flex-1 flex justify-start items-center gap-3 group">
+                <img src="logo.png" alt="Viola Logo" class="h-12 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/150x50/2c1e16/ffffff?text=VIOLA'">
+            </a>
+            <nav class="hidden lg:flex justify-center gap-12 font-bold text-gray-500 text-lg absolute left-1/2 -translate-x-1/2 w-max">
+                <a href="#home" class="scroll-link hover:text-brand-600 transition-colors">Home</a>
+                <a href="#products" class="scroll-link hover:text-brand-600 transition-colors">Menu</a>
+                <a href="#footer" class="scroll-link hover:text-brand-600 transition-colors">Contact</a>
+            </nav>
+            <div class="flex-1 flex justify-end items-center gap-4">
+                <button onclick="toggleCart()" class="relative flex items-center justify-center bg-brand-900 text-white h-14 w-14 md:h-16 md:w-16 rounded-full hover:bg-brand-600 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 group">
                     <i class="fas fa-shopping-bag text-xl md:text-2xl group-hover:scale-110 transition-transform"></i>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-600 text-white text-xs font-extrabold w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-full border-[3px] border-white shadow-sm">0</span>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-extrabold w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-full border-[3px] border-white shadow-sm">0</span>
                 </button>
-      </div>
-    </header>
-  </div>
-
-  <!-- Mobile Bottom Navigation Bar -->
-  <div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] sm:w-[80%] z-40">
-    <div
-      class="bg-brand-900/95 backdrop-blur-2xl rounded-full px-6 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(44,24,16,0.4)] border border-brand-700/50">
-      <a href="#home"
-        class="scroll-link text-brand-200 hover:text-white flex flex-col items-center gap-1 transition-all">
-        <i class="fas fa-home text-xl"></i>
-        <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Home</span>
-      </a>
-      <a href="#menu"
-        class="scroll-link text-brand-200 hover:text-white flex flex-col items-center gap-1 transition-all">
-        <i class="fas fa-utensils text-xl"></i>
-        <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Menu</span>
-      </a>
-      <a href="#footer"
-        class="scroll-link text-brand-200 hover:text-white flex flex-col items-center gap-1 transition-all">
-        <i class="fas fa-phone-alt text-xl scale-x-[-1]"></i>
-        <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Contact</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- 2. Hero Section -->
-  <section id="home" class="relative w-full pt-40 md:pt-48 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto group">
-    <div id="carousel"
-      class="w-full h-[65vh] min-h-[450px] md:h-[75vh] md:min-h-[550px] max-h-[800px] relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white bg-brand-950">
-      <!-- Banners injected by JS -->
-    </div>
-  </section>
-
-  <!-- 3. Menu Filter Section -->
-  <section id="menu" class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-
-    <!-- Main Category Tabs -->
-    <div class="bg-white rounded-[2rem] md:rounded-[3rem] p-3 md:p-4 shadow-premium border border-brand-100 mb-8">
-      <div class="flex flex-wrap justify-center gap-2 md:gap-4">
-        <button onclick="switchMainCategory('food')" id="tab-food" class="filter-btn active px-6 md:px-10 py-3 md:py-4 rounded-full font-extrabold text-sm md:text-lg transition-all duration-300 bg-brand-900 text-white shadow-md">
-                    <i class="fas fa-utensils mr-2"></i>Food Menu
-                </button>
-        <button onclick="switchMainCategory('drinks')" id="tab-drinks" class="filter-btn px-6 md:px-10 py-3 md:py-4 rounded-full font-extrabold text-sm md:text-lg transition-all duration-300 bg-brand-100 text-brand-700 hover:bg-brand-200">
-                    <i class="fas fa-coffee mr-2"></i>Drinks & Beverages
-                </button>
-        <button onclick="switchMainCategory('coffee')" id="tab-coffee" class="filter-btn px-6 md:px-10 py-3 md:py-4 rounded-full font-extrabold text-sm md:text-lg transition-all duration-300 bg-brand-100 text-brand-700 hover:bg-brand-200">
-                    <i class="fas fa-mug-hot mr-2"></i>Coffee Menu
-                </button>
-        <button onclick="switchMainCategory('desserts')" id="tab-desserts" class="filter-btn px-6 md:px-10 py-3 md:py-4 rounded-full font-extrabold text-sm md:text-lg transition-all duration-300 bg-brand-100 text-brand-700 hover:bg-brand-200">
-                    <i class="fas fa-ice-cream mr-2"></i>Desserts & Shakes
-                </button>
-      </div>
+            </div>
+        </header>
     </div>
 
-    <!-- Subcategory Filter -->
-    <div id="subcategory-container" class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
-      <!-- Subcategory buttons injected by JS -->
-    </div>
-
-    <!-- Products Grid -->
-    <div id="product-grid"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
-      <!-- Products injected by JS -->
-    </div>
-  </section>
-
-  <!-- 4. Footer -->
-  <footer id="footer"
-    class="bg-white border-t-2 border-brand-100 mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden">
-    <div
-      class="max-w-[1600px] mx-auto px-6 lg:px-16 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
-      <div class="flex flex-col items-start text-left">
-        <div class="mb-6">
-          <img src="logo1.png" alt="Viola Pizzeria Logo" class="h-14 w-auto object-contain" onerror="this.src='https://via.placeholder.com/200x60?text=VIOLA'">
+    <div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] sm:w-[80%] z-40">
+        <div class="bg-brand-900/95 backdrop-blur-2xl rounded-full px-6 py-4 flex justify-between items-center shadow-[0_20px_40px_rgba(0,0,0,0.3)] border border-brand-900/50">
+            <a href="#home" class="scroll-link text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-all">
+                <i class="fas fa-home text-xl"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Home</span>
+            </a>
+            <a href="#products" class="scroll-link text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-all">
+                <i class="fas fa-coffee text-xl"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Menu</span>
+            </a>
+            <a href="#footer" class="scroll-link text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-all">
+                <i class="fas fa-phone-alt text-xl scale-x-[-1]"></i>
+                <span class="text-[10px] font-extrabold uppercase tracking-wider mt-1">Contact</span>
+            </a>
         </div>
-        <p class="fluid-p text-brand-700 font-medium max-w-md">Premium pizzeria and cafe serving authentic Italian
-          cuisine and specialty beverages. Order online and get it delivered to your doorstep!</p>
-      </div>
-
-      <div class="flex flex-col items-start text-left lg:items-center lg:text-center">
-        <div class="w-full lg:w-auto text-left">
-          <h3 class="text-xl md:text-2xl font-extrabold text-brand-950 mb-6">Quick Links</h3>
-          <ul class="text-brand-700 space-y-4 font-semibold fluid-p">
-            <li><a href="#home"
-                class="scroll-link hover:text-brand-900 transition-colors flex items-center gap-3"><i class="fas fa-arrow-right text-sm text-brand-600"></i>
-                Home</a></li>
-            <li><a href="#menu"
-                class="scroll-link hover:text-brand-900 transition-colors flex items-center gap-3"><i class="fas fa-arrow-right text-sm text-brand-600"></i>
-                Menu</a></li>
-            <li><a href="#footer"
-                class="scroll-link hover:text-brand-900 transition-colors flex items-center gap-3"><i class="fas fa-arrow-right text-sm text-brand-600"></i>
-                Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-start text-left">
-        <h3 class="text-xl md:text-2xl font-extrabold text-brand-950 mb-6">Order Now</h3>
-        <p class="fluid-p text-brand-800 font-bold mb-6 flex items-center gap-3">
-          <i class="fas fa-phone-alt transform scale-x-[-1] bg-brand-50 border border-brand-200 p-3 rounded-full text-brand-900 shadow-sm"></i>
-          <span id="whatsapp-number">+91 XXXXX XXXXX</span>
-        </p>
-        <div class="w-full flex items-center justify-start">
-          <a href="https://wa.me/91XXXXXXXXXX" target="_blank"
-            class="inline-flex items-center gap-3 bg-brand-900 hover:bg-brand-800 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-brand-900/30 hover:shadow-brand-900/50 hover:-translate-y-1 transition-all duration-300 text-lg">
-            <i class="fab fa-whatsapp text-2xl"></i> WhatsApp Order
-          </a>
-        </div>
-      </div>
     </div>
-    <div class="bg-brand-50 py-6 border-t border-brand-100">
-      <div class="text-center text-brand-700 font-semibold text-sm md:text-base">
-        &copy; 2026 Viola Pizzeria. Made with <i class="fas fa-heart text-brand-600 mx-1 animate-pulse"></i>
-      </div>
-    </div>
-  </footer>
 
-  <!-- CART SIDEBAR -->
-  <div id="cart-sidebar"
-    class="fixed inset-y-0 right-0 w-full md:w-[480px] lg:w-[550px] bg-brand-50 backdrop-blur-3xl shadow-[0_0_50px_rgba(44,24,16,0.2)] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[70] flex flex-col md:rounded-l-[2.5rem] border-l border-white/80">
+    <section id="home" class="relative w-full pt-40 md:pt-48 pb-10 px-4 sm:px-6 lg:px-8 max-w-[1600px] mx-auto group">
+        <div id="carousel" class="w-full h-[65vh] min-h-[450px] md:h-[75vh] md:min-h-[550px] max-h-[800px] relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl border-4 border-white bg-brand-900">
+            </div>
+    </section>
 
-    <div
-      class="sticky top-0 z-20 px-6 md:px-8 py-6 flex justify-between items-center bg-white/95 backdrop-blur-md border-b border-brand-100 md:rounded-tl-[2.5rem]">
-      <h2 class="text-2xl md:text-3xl font-extrabold text-brand-950 flex items-center gap-3 md:gap-4">
-        <div class="p-2 md:p-3 bg-brand-200 text-brand-800 rounded-full">
-          <i class="fas fa-shopping-basket text-xl"></i>
+    <section id="products" class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        
+        <div class="w-full flex flex-col items-center justify-center text-center mb-10 mx-auto">
+            <h2 class="fluid-h2 font-extrabold text-brand-900 drop-shadow-sm w-full text-center mb-4">Our Premium Menu</h2>
+            <p class="fluid-p text-gray-500 max-w-2xl w-full text-center mx-auto mb-8">Select a category below to explore our offerings.</p>
+            
+            <div class="w-full max-w-5xl overflow-x-auto category-scroll pb-4">
+                <div id="category-filters" class="flex gap-3 w-max mx-auto px-2">
+                    </div>
+            </div>
         </div>
-        Your Cart
-      </h2>
-      <button onclick="toggleCart()" class="text-brand-400 hover:text-brand-900 hover:bg-brand-100 text-3xl transition-all bg-brand-100 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shadow-sm border border-brand-200">
+        
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mt-6">
+            </div>
+    </section>
+
+    <footer id="footer" class="bg-white border-t-2 border-gray-100 mt-16 rounded-t-[3rem] md:rounded-t-[4rem] overflow-hidden">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+            <div class="flex flex-col items-start text-left">
+                <div class="mb-6">
+                    <img src="logo.png" alt="Viola Logo" class="h-14 w-auto object-contain" onerror="this.src='https://via.placeholder.com/200x60/2c1e16/ffffff?text=VIOLA'">
+                </div>
+                <p class="fluid-p text-gray-500 font-medium max-w-md">Crafting perfect moments with every cup and every bite. Experience the finest coffee and artisanal food.</p>
+            </div>
+            
+            <div class="flex flex-col items-start text-left lg:items-center lg:text-center">
+                <div class="w-full lg:w-auto text-left">
+                    <h3 class="text-xl md:text-2xl font-extrabold text-brand-900 mb-6">Quick Links</h3>
+                    <ul class="text-gray-500 space-y-4 font-semibold fluid-p">
+                        <li><a href="#home" class="scroll-link hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fas fa-arrow-right text-sm text-brand-500"></i> Home</a></li>
+                        <li><a href="#products" class="scroll-link hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fas fa-arrow-right text-sm text-brand-500"></i> Full Menu</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-start text-left">
+                <h3 class="text-xl md:text-2xl font-extrabold text-brand-900 mb-6">Order Now</h3>
+                <p class="fluid-p text-gray-600 font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-paper-plane transform bg-gray-50 border border-gray-200 p-3 rounded-full text-brand-900 shadow-sm"></i> 
+                    Directly to our WhatsApp
+                </p>
+                <div class="w-full flex items-center justify-start">
+                    <button onclick="toggleCart()" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe57] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-green-500/30 hover:shadow-green-500/50 hover:-translate-y-1 transition-all duration-300 text-lg">
+                        <i class="fab fa-whatsapp text-2xl"></i> View Cart & Order
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-50 py-6 border-t border-gray-100">
+            <div class="text-center text-gray-500 font-semibold text-sm md:text-base">
+                &copy; 2026 Viola Cafe. All rights reserved. Made with <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full md:w-[480px] lg:w-[550px] bg-gray-50 backdrop-blur-3xl shadow-[0_0_50px_rgba(0,0,0,0.2)] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[70] flex flex-col md:rounded-l-[2.5rem] border-l border-white/80">
+        
+        <div class="sticky top-0 z-20 px-6 md:px-8 py-6 flex justify-between items-center bg-white/95 backdrop-blur-md border-b border-gray-100 md:rounded-tl-[2.5rem]">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-brand-900 flex items-center gap-3 md:gap-4">
+                <div class="p-2 md:p-3 bg-brand-100 text-brand-600 rounded-full">
+                    <i class="fas fa-shopping-basket text-xl"></i></div>
+                Your Order
+            </h2>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-red-500 hover:bg-red-50 text-3xl transition-all bg-gray-100 rounded-full w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shadow-sm border border-gray-200">
                 <i class="fas fa-times"></i>
             </button>
-    </div>
-
-    <div id="cart-items" class="flex-1 overflow-y-auto p-4 md:p-6 no-scrollbar space-y-4 md:space-y-5">
-      <!-- Items injected by JS -->
-    </div>
-
-    <div
-      class="sticky bottom-0 p-6 md:p-8 bg-white border-t border-brand-200 md:rounded-bl-[2.5rem] shadow-[0_-15px_30px_rgba(44,24,16,0.08)]">
-      <div class="flex justify-between items-center mb-6">
-        <span class="text-lg md:text-xl font-bold text-brand-700">Total</span>
-        <span id="cart-total" class="text-3xl md:text-4xl font-extrabold text-brand-950 tracking-tight">₹0</span>
-      </div>
-
-      <form id="checkout-form" class="space-y-4 hidden">
-        <div class="space-y-3">
-          <input type="text" id="cust-name" placeholder="Your Name" required class="w-full bg-brand-50 text-base md:text-lg border border-brand-200 rounded-full px-5 py-3 md:px-6 md:py-4 focus:bg-white focus:border-brand-600 outline-none font-semibold transition-all shadow-inner">
-          <input type="tel" id="cust-phone" placeholder="Mobile Number" required class="w-full bg-brand-50 text-base md:text-lg border border-brand-200 rounded-full px-5 py-3 md:px-6 md:py-4 focus:bg-white focus:border-brand-600 outline-none font-semibold transition-all shadow-inner">
         </div>
-        <button type="submit" class="w-full bg-brand-900 text-white font-extrabold py-4 md:py-5 rounded-full flex justify-center items-center gap-2 hover:bg-brand-700 hover:-translate-y-1 transition-all duration-300 text-lg md:text-xl mt-2 shadow-lg shadow-brand-900/20">
-                    Confirm Order <i class="fab fa-whatsapp text-brand-300 text-xl md:text-2xl"></i>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-4 md:p-6 no-scrollbar space-y-4 md:space-y-5">
+            </div>
+
+        <div class="sticky bottom-0 p-6 md:p-8 bg-white border-t border-gray-200 md:rounded-bl-[2.5rem] shadow-[0_-15px_30px_rgba(0,0,0,0.06)]">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-lg md:text-xl font-bold text-gray-500">Total</span>
+                <span id="cart-total" class="text-3xl md:text-4xl font-extrabold text-brand-900 tracking-tight">₹0</span>
+            </div>
+
+            <form id="checkout-form" class="space-y-4 hidden">
+                <div class="space-y-3">
+                    <input type="text" id="cust-name" placeholder="Your Name" required class="w-full bg-gray-50 text-base md:text-lg border border-gray-200 rounded-full px-5 py-3 md:px-6 md:py-4 focus:bg-white focus:border-brand-500 outline-none font-semibold transition-all shadow-inner">
+                    <input type="tel" id="cust-phone" placeholder="Mobile Number" required class="w-full bg-gray-50 text-base md:text-lg border border-gray-200 rounded-full px-5 py-3 md:px-6 md:py-4 focus:bg-white focus:border-brand-500 outline-none font-semibold transition-all shadow-inner">
+                    <textarea id="cust-address" placeholder="Delivery Address / Table No." required rows="2" class="w-full bg-gray-50 text-base md:text-lg border border-gray-200 rounded-[1.5rem] px-5 py-3 md:px-6 md:py-4 focus:bg-white focus:border-brand-500 outline-none font-semibold transition-all shadow-inner resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-900 text-white font-extrabold py-4 md:py-5 rounded-full flex justify-center items-center gap-2 hover:bg-brand-600 hover:-translate-y-1 transition-all duration-300 text-lg md:text-xl mt-2 shadow-lg shadow-brand-900/20">
+                    Confirm Order <i class="fab fa-whatsapp text-green-400 text-xl md:text-2xl"></i>
                 </button>
-      </form>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <div id="cart-overlay" onclick="toggleCart()"
-    class="fixed inset-0 bg-brand-950/60 backdrop-blur-sm z-[60] hidden transition-all duration-500 opacity-0"></div>
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-[60] hidden transition-all duration-500 opacity-0"></div>
 
-  <script>
-    // --- FAST SCROLLING ---
+    <script>
+        // ==========================================
+        // CLIENT SETTINGS (CHANGE NUMBER HERE)
+        // ==========================================
+        const WHATSAPP_NUMBER = "919000000000"; // Replace with actual Client Number, include country code e.g. 91
+        // ==========================================
+
+        // --- FAST SCROLLING ---
         document.querySelectorAll('.scroll-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -300,150 +235,165 @@
             });
         });
 
-        // --- PRODUCT DATA - ALL MENU ITEMS ---
-        const allItems = [
-            // FOOD MENU - SIDES
-            { id: 'f1', mainCategory: 'food', subCategory: 'Sides', name: 'French Fries', price: 220, description: 'Crispy golden fries', img: 'french-fries.png' },
-            { id: 'f2', mainCategory: 'food', subCategory: 'Sides', name: 'Peri Peri Fries', price: 220, description: 'Spicy peri peri flavored fries', img: 'peri-peri-fries.png' },
-            { id: 'f3', mainCategory: 'food', subCategory: 'Sides', name: 'Onion Rings', price: 220, description: 'Crispy battered onion rings', img: 'onion-rings.png' },
-            { id: 'f4', mainCategory: 'food', subCategory: 'Sides', name: 'Cheese Balls', price: 270, description: 'Molten cheese balls', img: 'cheese-balls.png' },
-            { id: 'f5', mainCategory: 'food', subCategory: 'Sides', name: 'Cheese Garlic Bread', price: 270, description: 'Garlic bread with cheese', img: 'cheese-garlic-bread.png' },
-            { id: 'f6', mainCategory: 'food', subCategory: 'Sides', name: 'Hand Stretched Garlic Bread', price: 270, description: 'Freshly stretched garlic bread', img: 'garlic-bread.png' },
-            { id: 'f7', mainCategory: 'food', subCategory: 'Sides', name: 'Nachos Overloaded', price: 300, description: 'Loaded nachos with toppings', img: 'nachos.png' },
-            { id: 'f8', mainCategory: 'food', subCategory: 'Sides', name: 'Nachos with Guacamole', price: 300, description: 'Nachos served with fresh guacamole', img: 'nachos-guac.png' },
-            { id: 'f9', mainCategory: 'food', subCategory: 'Sides', name: 'Avocado Toast', price: 300, description: 'Fresh avocado on toast', img: 'avocado-toast.png' },
-            { id: 'f10', mainCategory: 'food', subCategory: 'Sides', name: 'Devil Paneer', price: 300, description: 'Spicy paneer dish', img: 'devil-paneer.png' },
-            { id: 'f11', mainCategory: 'food', subCategory: 'Sides', name: 'Quesadilla', price: 300, description: 'Cheese filled quesadilla', img: 'quesadilla.png' },
-            
-            // FOOD MENU - PASTA
-            { id: 'f12', mainCategory: 'food', subCategory: 'Pasta', name: 'Alfredo Pasta', price: 360, description: 'Creamy alfredo sauce pasta', img: 'alfredo-pasta.png' },
-            { id: 'f13', mainCategory: 'food', subCategory: 'Pasta', name: 'Mix Sauce Pasta', price: 360, description: 'Pasta with mixed sauces', img: 'mix-sauce-pasta.png' },
-            { id: 'f14', mainCategory: 'food', subCategory: 'Pasta', name: 'Arrabbiata Pasta', price: 360, description: 'Spicy tomato sauce pasta', img: 'arrabbiata-pasta.png' },
-            { id: 'f15', mainCategory: 'food', subCategory: 'Pasta', name: 'Ravioli', price: 360, description: 'Stuffed pasta parcels', img: 'ravioli.png' },
-            { id: 'f16', mainCategory: 'food', subCategory: 'Pasta', name: 'Pesto Pasta', price: 360, description: 'Basil pesto pasta', img: 'pesto-pasta.png' },
-            { id: 'f17', mainCategory: 'food', subCategory: 'Pasta', name: 'Aglio O Olio', price: 360, description: 'Garlic and oil pasta', img: 'aglio-olio.png' },
-            
-            // FOOD MENU - RICE
-            { id: 'f18', mainCategory: 'food', subCategory: 'Rice', name: 'Garlic Rice', price: 350, description: 'Aromatic garlic rice', img: 'garlic-rice.png' },
-            { id: 'f19', mainCategory: 'food', subCategory: 'Rice', name: 'Mexican Rice', price: 350, description: 'Spiced Mexican style rice', img: 'mexican-rice.png' },
-            { id: 'f20', mainCategory: 'food', subCategory: 'Rice', name: 'Thai Curry Rice', price: 350, description: 'Thai curry with rice', img: 'thai-curry-rice.png' },
-            { id: 'f21', mainCategory: 'food', subCategory: 'Rice', name: 'Mongolian Rice', price: 350, description: 'Mongolian style rice', img: 'mongolian-rice.png' },
-            { id: 'f22', mainCategory: 'food', subCategory: 'Rice', name: 'Korean Rice', price: 350, description: 'Korean style rice dish', img: 'korean-rice.png' },
-            
-            // FOOD MENU - PIZZA
-            { id: 'f23', mainCategory: 'food', subCategory: 'Pizza', name: 'Margarita Pizza', price: 420, description: 'Basil, cherry tomato, mozzarella', img: 'margarita-pizza.png' },
-            { id: 'f24', mainCategory: 'food', subCategory: 'Pizza', name: 'Tandoori Paneer Pizza', price: 480, description: 'Paneer, onion, red paprika, bell pepper', img: 'tandoori-paneer-pizza.png' },
-            { id: 'f25', mainCategory: 'food', subCategory: 'Pizza', name: 'Fantastic Cottage Pizza', price: 480, description: 'Spinach, Paneer, olives, Mozzarella', img: 'fantastic-cottage-pizza.png' },
-            { id: 'f26', mainCategory: 'food', subCategory: 'Pizza', name: 'Mexican Pizza', price: 480, description: 'Sweetcorn, babycorn, chilly, onion', img: 'mexican-pizza.png' },
-            { id: 'f27', mainCategory: 'food', subCategory: 'Pizza', name: 'Mushroom Heaven Pizza', price: 480, description: 'Mushroom, garlic, olives, sundried tomato, mozzarella', img: 'mushroom-pizza.png' },
-            { id: 'f28', mainCategory: 'food', subCategory: 'Pizza', name: 'Cheezy Volcano Pizza', price: 480, description: 'Oregano leaves, babycorn, green olives, garlic paste, ricotta cheese', img: 'cheezy-volcano-pizza.png' },
-            
-            // FOOD MENU - SANDWICH
-            { id: 'f29', mainCategory: 'food', subCategory: 'Sandwich', name: 'Farm Fresh Sandwich', price: 300, description: 'Fresh vegetable sandwich', img: 'farm-fresh-sandwich.png' },
-            { id: 'f30', mainCategory: 'food', subCategory: 'Sandwich', name: 'Cheese Grilled Sandwich', price: 300, description: 'Grilled cheese sandwich', img: 'cheese-grilled-sandwich.png' },
-            { id: 'f31', mainCategory: 'food', subCategory: 'Sandwich', name: 'Smokey Paneer Sandwich', price: 300, description: 'Smokey paneer sandwich', img: 'smokey-paneer-sandwich.png' },
-            { id: 'f32', mainCategory: 'food', subCategory: 'Sandwich', name: 'Pesto Basil Sandwich', price: 300, description: 'Pesto basil sandwich', img: 'pesto-sandwich.png' },
-            
-            // DRINKS - COLD BREW
-            { id: 'd1', mainCategory: 'drinks', subCategory: 'Cold Brew', name: 'Classic Cold Brew', price: 220, description: 'Dark & Fruity', img: 'classic-cold-brew.png' },
-            { id: 'd2', mainCategory: 'drinks', subCategory: 'Cold Brew', name: 'Barrel Aged Cold Brew', price: 250, description: 'Whiskey/rum - 24H Brewed', img: 'barrel-aged-cold-brew.png' },
-            { id: 'd3', mainCategory: 'drinks', subCategory: 'Cold Brew', name: 'Jim Bim', price: 250, description: 'Whiskey cold brew, yuzu, orange extract, tonic water, ice', img: 'jim-bim.png' },
-            { id: 'd4', mainCategory: 'drinks', subCategory: 'Cold Brew', name: 'Orange Cold Brew', price: 250, description: 'Fresh orange infused with cold brew, brewed for 24 hour', img: 'orange-cold-brew.png' },
-            { id: 'd5', mainCategory: 'drinks', subCategory: 'Cold Brew', name: 'Cranberry Cold Brew', price: 250, description: 'Mixture of cold brew, frozen cranberries & ice', img: 'cranberry-cold-brew.png' },
-            
-            // DRINKS - MANUAL BREWS
-            { id: 'd6', mainCategory: 'drinks', subCategory: 'Manual Brews', name: 'V60 Pour Over', price: 180, description: 'Hot / Iced', img: 'v60-pour-over.png' },
-            { id: 'd7', mainCategory: 'drinks', subCategory: 'Manual Brews', name: 'Aeropress', price: 180, description: 'Hot / Iced', img: 'aeropress.png' },
-            
-            // DRINKS - COOLERS & TEAS
-            { id: 'd8', mainCategory: 'drinks', subCategory: 'Coolers & Teas', name: 'Classic Iced Tea', price: 250, description: 'Lemon/peach/cranberry/hibiscus', img: 'iced-tea.png' },
-            { id: 'd9', mainCategory: 'drinks', subCategory: 'Coolers & Teas', name: 'Virgin Mojito', price: 250, description: 'Mint/blueberry/blood orange', img: 'virgin-mojito.png' },
-            { id: 'd10', mainCategory: 'drinks', subCategory: 'Coolers & Teas', name: 'Green Teas', price: 250, description: 'Classic/hibiscus/rose', img: 'green-tea.png' },
-            
-            // DRINKS - MATCHA
-            { id: 'd11', mainCategory: 'drinks', subCategory: 'Matcha', name: 'Iced Matcha', price: 250, description: 'Milk & Ice topped with Vanilla infused matcha foam', img: 'iced-matcha.png' },
-            { id: 'd12', mainCategory: 'drinks', subCategory: 'Matcha', name: 'Iced Coconut Matcha', price: 270, description: 'Coconut water with honey & coconut matcha cloud', img: 'coconut-matcha.png' },
-            { id: 'd13', mainCategory: 'drinks', subCategory: 'Matcha', name: 'Fig Matcha', price: 270, description: 'Fresh fig syrup blended with milk, ice and matcha foam', img: 'fig-matcha.png' },
-            { id: 'd14', mainCategory: 'drinks', subCategory: 'Matcha', name: 'Strawberry Matcha', price: 270, description: 'Strawberry Pulp, ice, milk topped with matcha foam', img: 'strawberry-matcha.png' },
-            { id: 'd15', mainCategory: 'drinks', subCategory: 'Matcha', name: 'Blueberry Matcha', price: 270, description: 'Blueberry pulp, ice, milk topped with matcha foam', img: 'blueberry-matcha.png' },
-            
-            // DRINKS - MOCKTAILS
-            { id: 'd16', mainCategory: 'drinks', subCategory: 'Mocktails', name: 'Pina Colada', price: 260, description: 'Pineapple juice, chunks, pina colada syrup and vanilla ice cream', img: 'pina-colada.png' },
-            { id: 'd17', mainCategory: 'drinks', subCategory: 'Mocktails', name: 'Sun Goddess', price: 260, description: 'Sparkling ginger beer & honey blended with lemon & citrus juice', img: 'sun-goddess.png' },
-            { id: 'd18', mainCategory: 'drinks', subCategory: 'Mocktails', name: 'Apple Ginger Sour', price: 260, description: 'Apple & passion fruit Juice mix with tonic water & blue tea', img: 'apple-ginger-sour.png' },
-            { id: 'd19', mainCategory: 'drinks', subCategory: 'Mocktails', name: 'Rosemary Fizz', price: 260, description: 'Rum cold brew shaken with lemon, ice, soda topped with blood orange syrup', img: 'rosemary-fizz.png' },
-            { id: 'd20', mainCategory: 'drinks', subCategory: 'Mocktails', name: 'Halekulani', price: 260, description: 'Mixture of citrus juices, lemon, Whiskey cold brew & condensed milk', img: 'halekulani.png' },
-            
-            // COFFEE - HOT COFFEE
-            { id: 'c1', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Espresso', price: 150, description: 'Single origin espresso with balanced sweetness & boldness', img: 'espresso.png' },
-            { id: 'c2', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Americano', price: 150, description: '40ml espresso & hot water', img: 'americano.png' },
-            { id: 'c3', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Bon Bon', price: 150, description: 'Espresso over dulce de leche', img: 'bon-bon.png' },
-            { id: 'c4', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Cappuccino', price: 220, description: 'Espresso with steamed milk of choice', img: 'cappuccino.png' },
-            { id: 'c5', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Latte', price: 220, description: 'Espresso with steamed milk of choice', img: 'latte.png' },
-            { id: 'c6', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Flat White', price: 220, description: 'Espresso topped with 120ml milk & microfoam', img: 'flat-white.png' },
-            { id: 'c7', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Dark Chocolate Cortado', price: 220, description: '40ml Espresso, dark chocolate with 100 textured milk', img: 'dark-chocolate-cortado.png' },
-            { id: 'c8', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'French Vanilla Latte', price: 240, description: '40ml espresso, french vanilla, milk', img: 'french-vanilla-latte.png' },
-            { id: 'c9', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Salted Caramel Latte', price: 240, description: '40ml Espresso, caramel, milk, topped with cocoa powder', img: 'salted-caramel-latte.png' },
-            { id: 'c10', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Cafe Mocha', price: 240, description: 'Espresso, dark chocolate, textured milk', img: 'cafe-mocha.png' },
-            { id: 'c11', mainCategory: 'coffee', subCategory: 'Hot Coffee', name: 'Sea Salt Mocha', price: 240, description: 'Espresso, dark chocolate, sea salt, milk', img: 'sea-salt-mocha.png' },
-            
-            // COFFEE - ICED COFFEE
-            { id: 'c12', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Iced Americano', price: 160, description: '40ml espresso, ice & water', img: 'iced-americano.png' },
-            { id: 'c13', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Iced Latte', price: 220, description: 'Espresso with ice & milk of choice. Unsweetened', img: 'iced-latte.png' },
-            { id: 'c14', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Vietnamese Coffee', price: 220, description: 'Espresso shaken with ice & condensed milk', img: 'vietnamese-coffee.png' },
-            { id: 'c15', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Valencia Orange Coffee', price: 220, description: 'Espresso & Fresh Orange Juice', img: 'valencia-orange-coffee.png' },
-            { id: 'c16', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Espresso Tonic', price: 220, description: 'Yuzu/Cranberry/Orange +30, Espresso with tonic water & ice', img: 'espresso-tonic.png' },
-            { id: 'c17', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Classic Frappe', price: 250, description: 'Vanilla, hazelnut, nutella +30', img: 'classic-frappe.png' },
-            { id: 'c18', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Cranberry Espresso', price: 250, description: 'Espresso blended with frozen cranberries, ice & water', img: 'cranberry-espresso.png' },
-            { id: 'c19', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Affogato', price: 250, description: '45ml Espresso Served with vanilla ice cream', img: 'affogato.png' },
-            { id: 'c20', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Iced Mocha', price: 250, description: 'Espresso, dark chocolate, ice & milk', img: 'iced-mocha.png' },
-            { id: 'c21', mainCategory: 'coffee', subCategory: 'Iced Coffee', name: 'Signature Hot Chocolate', price: 280, description: 'Hazelnut +40, Made using callebaut dark chocolate', img: 'hot-chocolate.png' },
-            
-            // DESSERTS - SHAKES
-            { id: 's1', mainCategory: 'desserts', subCategory: 'Shakes', name: 'Biscoff Shake', price: 280, description: 'Biscoff flavored shake', img: 'biscoff-shake.png' },
-            { id: 's2', mainCategory: 'desserts', subCategory: 'Shakes', name: 'Nutella Shake', price: 280, description: 'Nutella flavored shake', img: 'nutella-shake.png' },
-            { id: 's3', mainCategory: 'desserts', subCategory: 'Shakes', name: 'Ferrero Rocher Shake', price: 280, description: 'Ferrero rocher flavored shake', img: 'ferrero-shake.png' },
-            { id: 's4', mainCategory: 'desserts', subCategory: 'Shakes', name: 'Oreo Shake', price: 280, description: 'Oreo flavored shake', img: 'oreo-shake.png' },
-            
-            // DESSERTS - HOT CHOCOLATE
-            { id: 's5', mainCategory: 'desserts', subCategory: 'Hot Chocolate', name: 'Signature Hot Chocolate', price: 300, description: 'Premium hot chocolate', img: 'signature-hot-chocolate.png' },
-            { id: 's6', mainCategory: 'desserts', subCategory: 'Hot Chocolate', name: 'Hazelnut Hot Chocolate', price: 330, description: 'Hot chocolate with hazelnut +30', img: 'hazelnut-hot-chocolate.png' },
-            { id: 's7', mainCategory: 'desserts', subCategory: 'Hot Chocolate', name: 'Pistachio Hot Chocolate', price: 330, description: 'Hot chocolate with pistachio +30', img: 'pistachio-hot-chocolate.png' },
-            { id: 's8', mainCategory: 'desserts', subCategory: 'Hot Chocolate', name: 'Salted Caramel Hot Chocolate', price: 330, description: 'Hot chocolate with salted caramel +30', img: 'salted-caramel-hot-chocolate.png' },
-            
-            // DESSERTS - DESSERTS
-            { id: 's9', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Blueberry Cheesecake', price: 280, description: 'Fresh blueberry cheesecake', img: 'blueberry-cheesecake.png' },
-            { id: 's10', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Nutella Cheesecake', price: 280, description: 'Nutella flavored cheesecake', img: 'nutella-cheesecake.png' },
-            { id: 's11', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Biscoff Cheesecake', price: 280, description: 'Biscoff flavored cheesecake', img: 'biscoff-cheesecake.png' },
-            { id: 's12', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Oreo Cheesecake', price: 280, description: 'Oreo flavored cheesecake', img: 'oreo-cheesecake.png' },
-            { id: 's13', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Ferrero Rocher Cheesecake', price: 280, description: 'Ferrero rocher cheesecake', img: 'ferrero-cheesecake.png' },
-            { id: 's14', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Tiramisu', price: 280, description: 'Classic Italian tiramisu', img: 'tiramisu.png' },
-            { id: 's15', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Strawberry Tres Leches', price: 280, description: 'Strawberry tres leches cake', img: 'strawberry-tres-leches.png' },
-            { id: 's16', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Chocolate Ganache Brownie', price: 280, description: 'Rich chocolate brownie', img: 'chocolate-brownie.png' },
-            { id: 's17', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Butter Croissant', price: 280, description: 'Fresh butter croissant', img: 'butter-croissant.png' },
-            { id: 's18', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Nutella Croissant', price: 280, description: 'Croissant filled with Nutella', img: 'nutella-croissant.png' },
-            { id: 's19', mainCategory: 'desserts', subCategory: 'Desserts', name: 'Pistachio Croissant', price: 280, description: 'Croissant with pistachio', img: 'pistachio-croissant.png' }
+        // --- PRODUCT DATA (Total 92 Items Checked & Verified) ---
+        const products = [
+            // HOT COFFEE (11)
+            { id: 'hc1', category: 'Hot Coffee', name: 'Espresso', price: 150, desc: 'Single origin espresso with balanced sweetness & boldness.' },
+            { id: 'hc2', category: 'Hot Coffee', name: 'Americano', price: 150, desc: '40ml espresso & hot water.' },
+            { id: 'hc3', category: 'Hot Coffee', name: 'Bon Bon', price: 150, desc: 'Espresso over dulce de leche.' },
+            { id: 'hc4', category: 'Hot Coffee', name: 'Cappuccino', price: 220, desc: 'Espresso with steamed milk of choice.' },
+            { id: 'hc5', category: 'Hot Coffee', name: 'Latte', price: 220, desc: 'Espresso with steamed milk of choice.' },
+            { id: 'hc6', category: 'Hot Coffee', name: 'Flat White', price: 220, desc: 'Espresso topped with 120ml milk & microfoam.' },
+            { id: 'hc7', category: 'Hot Coffee', name: 'Dark Chocolate Cortado', price: 220, desc: '40ml Espresso, dark chocolate with 100 textured milk.' },
+            { id: 'hc8', category: 'Hot Coffee', name: 'French Vanilla Latte', price: 240, desc: '40ml espresso, french vanilla, milk.' },
+            { id: 'hc9', category: 'Hot Coffee', name: 'Salted Caramel Latte', price: 240, desc: '40ml Espresso, caramel, milk, topped with cocoa powder.' },
+            { id: 'hc10', category: 'Hot Coffee', name: 'Cafe Mocha', price: 240, desc: 'Espresso, dark chocolate, textured milk.' },
+            { id: 'hc11', category: 'Hot Coffee', name: 'Sea Salt Mocha', price: 240, desc: 'Espresso, dark chocolate, sea salt, milk.' },
+
+            // ICED COFFEE (10)
+            { id: 'ic1', category: 'Iced Coffee', name: 'Iced Americano', price: 160, desc: '40ml espresso, ice & water.' },
+            { id: 'ic2', category: 'Iced Coffee', name: 'Iced Latte', price: 220, desc: 'Espresso with ice & milk of choice. Unsweetned.' },
+            { id: 'ic3', category: 'Iced Coffee', name: 'Vietnamese', price: 220, desc: 'Espresso shaken with ice & condensed milk.' },
+            { id: 'ic4', category: 'Iced Coffee', name: 'Valencia Orange Coffee', price: 220, desc: 'Espresso & Fresh Orange Juice.' },
+            { id: 'ic5', category: 'Iced Coffee', name: 'Espresso Tonic', price: 220, desc: 'Yuzu/Cranberry/Orange +30. Espresso with tonic water & ice.' },
+            { id: 'ic6', category: 'Iced Coffee', name: 'Classic Frappe', price: 250, desc: 'Vanilla, hazelnut, nutella +30' },
+            { id: 'ic7', category: 'Iced Coffee', name: 'Cranberry Espresso', price: 250, desc: 'Espresso blended with frozen cranberries, ice & water.' },
+            { id: 'ic8', category: 'Iced Coffee', name: 'Affogato', price: 250, desc: '45ml Espresso Served with vanilla ice cream.' },
+            { id: 'ic9', category: 'Iced Coffee', name: 'Iced Mocha', price: 250, desc: 'Espresso, dark chocolate, ice & milk.' },
+            { id: 'ic10', category: 'Iced Coffee', name: 'Signature Hot Chocolate', price: 280, desc: 'Hazelnut +40. Made using callebaut dark chocolate.' },
+
+            // COLD BREW (5)
+            { id: 'cb1', category: 'Cold Brew', name: 'Classic Cold Brew', price: 220, desc: 'Dark & Fruity.' },
+            { id: 'cb2', category: 'Cold Brew', name: 'Barrel Aged Cold Brew', price: 250, desc: 'Whiskey/rum - 24H Brewed' },
+            { id: 'cb3', category: 'Cold Brew', name: 'Jim Bim', price: 250, desc: 'Whiskey cold brew, yuzu, orange extract, tonic water, ice.' },
+            { id: 'cb4', category: 'Cold Brew', name: 'Orange Cold Brew', price: 250, desc: 'Fresh orange infused with cold brew, brewed for 24 hour.' },
+            { id: 'cb5', category: 'Cold Brew', name: 'Cranberry Cold Brew', price: 250, desc: 'Mixture of cold brew, frozen cranberries & ice.' },
+
+            // MATCHA (5)
+            { id: 'ma1', category: 'Matcha', name: 'Iced Matcha', price: 250, desc: 'Milk & Ice topped with Vanilla infused matcha foam.' },
+            { id: 'ma2', category: 'Matcha', name: 'Iced Coconut Matcha', price: 270, desc: 'Coconut water with honey & coconut matcha cloud.' },
+            { id: 'ma3', category: 'Matcha', name: 'Fig Matcha', price: 270, desc: 'Fresh fig syrup blended with milk, ice and matcha foam.' },
+            { id: 'ma4', category: 'Matcha', name: 'Strawberry Matcha', price: 270, desc: 'Strawberry Pulp, ice, milk topped with matcha foam.' },
+            { id: 'ma5', category: 'Matcha', name: 'Blueberry Matcha', price: 270, desc: 'Blueberry pulp, ice, milk topped with matcha foam.' },
+
+            // MANUAL BREWS (2)
+            { id: 'mb1', category: 'Manual Brews', name: 'V60 Pour Over - Hot / Iced', price: 180, desc: 'Craft brewed to perfection.' },
+            { id: 'mb2', category: 'Manual Brews', name: 'Aeropress - Hot / Iced', price: 180, desc: 'Smooth, rich manual press.' },
+
+            // COOLERS & TEAS (3)
+            { id: 'ct1', category: 'Coolers & Teas', name: 'Classic Iced Tea', price: 250, desc: 'Lemon/peach/cranberry/hibiscus' },
+            { id: 'ct2', category: 'Coolers & Teas', name: 'Virgin Mojito', price: 250, desc: 'Mint/blueberry/blood orange' },
+            { id: 'ct3', category: 'Coolers & Teas', name: 'Green Teas', price: 250, desc: 'Classic/hibiscus/rose' },
+
+            // MOCKTAILS (5)
+            { id: 'mo1', category: 'Mocktails', name: 'Pina Colada', price: 260, desc: 'Pineapple juice, chunks, pina colada syrup and vanilla ice cream.' },
+            { id: 'mo2', category: 'Mocktails', name: 'Sun Goddess', price: 260, desc: 'Sparkling ginger beer & honey blended with lemon & citrus juice.' },
+            { id: 'mo3', category: 'Mocktails', name: 'Apple Ginger Sour', price: 260, desc: 'Apple & passion fruit Juice mix with tonic water & blue tea.' },
+            { id: 'mo4', category: 'Mocktails', name: 'Rosemary Fizz', price: 260, desc: 'Rum cold brew shaken with lemon, ice, soda topped with blood orange syrup.' },
+            { id: 'mo5', category: 'Mocktails', name: 'Halekulani', price: 260, desc: 'Mixture of citrus juices, lemon, Whiskey cold brew & condensed milk.' },
+
+            // SIDES (11)
+            { id: 'sd1', category: 'Sides', name: 'French fries', price: 220, desc: 'Crispy classic fries.' },
+            { id: 'sd2', category: 'Sides', name: 'Peri Peri fries', price: 220, desc: 'Spicy peri peri coating.' },
+            { id: 'sd3', category: 'Sides', name: 'Onion rings', price: 220, desc: 'Golden fried onion rings.' },
+            { id: 'sd4', category: 'Sides', name: 'Cheese balls', price: 270, desc: 'Gooey melted cheese center.' },
+            { id: 'sd5', category: 'Sides', name: 'Cheese garlic bread', price: 270, desc: 'Garlic butter & mozzarella.' },
+            { id: 'sd6', category: 'Sides', name: 'Hand stretched garlic bread', price: 270, desc: 'Artisanal garlic bread.' },
+            { id: 'sd7', category: 'Sides', name: 'Nachos overloaded', price: 300, desc: 'Loaded with cheese & beans.' },
+            { id: 'sd8', category: 'Sides', name: 'Nachos with guacamole', price: 300, desc: 'Served with fresh guac.' },
+            { id: 'sd9', category: 'Sides', name: 'Avocado Toast', price: 300, desc: 'Fresh avocado on sourdough.' },
+            { id: 'sd10', category: 'Sides', name: 'Devil Paneer', price: 300, desc: 'Spicy cottage cheese chunks.' },
+            { id: 'sd11', category: 'Sides', name: 'Quesadilla', price: 300, desc: 'Cheesy mexican flatbread.' },
+
+            // PIZZA (6)
+            { id: 'pz1', category: 'Pizza', name: 'Margarita', price: 420, desc: 'Basil, cherry tomato, mozzarella.' },
+            { id: 'pz2', category: 'Pizza', name: 'Tandoori paneer', price: 480, desc: 'Paneer, onion, red paprika, bell pepper.' },
+            { id: 'pz3', category: 'Pizza', name: 'Fantastic cottage', price: 480, desc: 'Spinach, Paneer, olives, Mozzarella.' },
+            { id: 'pz4', category: 'Pizza', name: 'Mexican', price: 480, desc: 'Sweetcorn, babycorn, chilly, onion.' },
+            { id: 'pz5', category: 'Pizza', name: 'Mushroom heaven', price: 480, desc: 'Mushroom, garlic, olives, sundried tomato, mozzarella.' },
+            { id: 'pz6', category: 'Pizza', name: 'Cheezy volcano', price: 480, desc: 'Oregano leaves, babycorn, green olives, garlic paste, ricotta cheese.' },
+
+            // PASTA (6)
+            { id: 'pa1', category: 'Pasta', name: 'Alfredo', price: 360, desc: 'Creamy white sauce.' },
+            { id: 'pa2', category: 'Pasta', name: 'Mix Sauce', price: 360, desc: 'Pink sauce perfection.' },
+            { id: 'pa3', category: 'Pasta', name: 'Arrabbiata', price: 360, desc: 'Spicy red tomato sauce.' },
+            { id: 'pa4', category: 'Pasta', name: 'Ravioli', price: 360, desc: 'Stuffed pasta pillows.' },
+            { id: 'pa5', category: 'Pasta', name: 'Pesto', price: 360, desc: 'Fresh basil & nut sauce.' },
+            { id: 'pa6', category: 'Pasta', name: 'Aglio o olio', price: 360, desc: 'Garlic, olive oil, chilli flakes.' },
+
+            // RICE (5)
+            { id: 'rc1', category: 'Rice', name: 'Garlic rice', price: 350, desc: 'Aromatic garlic tossed.' },
+            { id: 'rc2', category: 'Rice', name: 'Maxican rice', price: 350, desc: 'Spicy mexican style.' },
+            { id: 'rc3', category: 'Rice', name: 'Thai Curry rice', price: 350, desc: 'Served with thai curry.' },
+            { id: 'rc4', category: 'Rice', name: 'Mongolian rice', price: 350, desc: 'Flavorful asian wok.' },
+            { id: 'rc5', category: 'Rice', name: 'Korean rice', price: 350, desc: 'Sticky, spicy & sweet.' },
+
+            // SANDWICH (4)
+            { id: 'sw1', category: 'Sandwich', name: 'Farm fresh', price: 300, desc: 'Fresh veggies & spread.' },
+            { id: 'sw2', category: 'Sandwich', name: 'Cheese grilled', price: 300, desc: 'Melted cheese classic.' },
+            { id: 'sw3', category: 'Sandwich', name: 'Smokey paneer', price: 300, desc: 'Smoked paneer filling.' },
+            { id: 'sw4', category: 'Sandwich', name: 'Pesto basil', price: 300, desc: 'Rich pesto spread.' },
+
+            // SHAKES (4)
+            { id: 'sh1', category: 'Shakes', name: 'Biscoff', price: 280, desc: 'Lotus biscoff blended.' },
+            { id: 'sh2', category: 'Shakes', name: 'Nutella', price: 280, desc: 'Rich nutella shake.' },
+            { id: 'sh3', category: 'Shakes', name: 'Ferrero rocher', price: 280, desc: 'Premium hazelnut chocolate.' },
+            { id: 'sh4', category: 'Shakes', name: 'Oreo', price: 280, desc: 'Classic cookies & cream.' },
+
+            // DESSERTS (11)
+            { id: 'ds1', category: 'Desserts', name: 'Blueberry cheesecake', price: 280, desc: 'Creamy with berry topping.' },
+            { id: 'ds2', category: 'Desserts', name: 'Nutella cheesecake', price: 280, desc: 'Decadent chocolate cheese.' },
+            { id: 'ds3', category: 'Desserts', name: 'Biscoff cheesecake', price: 280, desc: 'Caramel biscuit base.' },
+            { id: 'ds4', category: 'Desserts', name: 'Oreo cheesecake', price: 280, desc: 'Cookies embedded.' },
+            { id: 'ds5', category: 'Desserts', name: 'Ferrero rocher cheesecake', price: 280, desc: 'Hazelnut chocolate layer.' },
+            { id: 'ds6', category: 'Desserts', name: 'Tiramisu', price: 280, desc: 'Coffee soaked Italian classic.' },
+            { id: 'ds7', category: 'Desserts', name: 'Strawberry Tres leches', price: 280, desc: 'Three milk sponge cake.' },
+            { id: 'ds8', category: 'Desserts', name: 'Chocolate ganache brownie', price: 280, desc: 'Fudgy & rich.' },
+            { id: 'ds9', category: 'Desserts', name: 'Butter croissant', price: 280, desc: 'Flaky & buttery.' },
+            { id: 'ds10', category: 'Desserts', name: 'Nutella croissant', price: 280, desc: 'Stuffed with nutella.' },
+            { id: 'ds11', category: 'Desserts', name: 'Pistachio croissant', price: 280, desc: 'Pistachio cream filled.' },
+
+            // HOT CHOCOLATE (4)
+            { id: 'hch1', category: 'Hot Chocolate', name: 'Signature Hot Chocolate', price: 300, desc: 'Classic callebaut dark.' },
+            { id: 'hch2', category: 'Hot Chocolate', name: 'Hazelnut Hot Chocolate', price: 330, desc: 'Nutty & rich.' },
+            { id: 'hch3', category: 'Hot Chocolate', name: 'Pistachio Hot Chocolate', price: 330, desc: 'Earthy pistachio flavor.' },
+            { id: 'hch4', category: 'Hot Chocolate', name: 'Salted caramel Hot Chocolate', price: 330, desc: 'Sweet & salty balance.' }
         ];
 
-        // Subcategory mapping
-        const subcategories = {
-            food: ['Sides', 'Pasta', 'Rice', 'Pizza', 'Sandwich'],
-            drinks: ['Cold Brew', 'Manual Brews', 'Coolers & Teas', 'Matcha', 'Mocktails'],
-            coffee: ['Hot Coffee', 'Iced Coffee'],
-            desserts: ['Shakes', 'Hot Chocolate', 'Desserts']
-        };
+        // Fetch dynamic high quality placeholder for each category
+        function getCategoryImg(category) {
+            const imgs = {
+                'Hot Coffee': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600',
+                'Iced Coffee': 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=1600&auto=format&fit=crop',
+                'Cold Brew': 'https://images.unsplash.com/photo-1461023058943-0708e52b5020?q=80&w=600',
+                'Matcha': 'https://images.unsplash.com/photo-1749280447307-31a68eb38673?q=80&w=1600&auto=format&fit=crop',
+                'Manual Brews': 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=600',
+                'Coolers & Teas': 'https://images.unsplash.com/photo-1499638673689-79a0b5115d87?q=80&w=600',
+                'Mocktails': 'https://images.unsplash.com/photo-1536935338773-84640d58ad91?q=80&w=600',
+                'Sides': 'https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=600',
+                'Pizza': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600',
+                'Pasta': 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=600',
+                'Rice': 'https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=600',
+                'Sandwich': 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=600',
+                'Shakes': 'https://images.unsplash.com/photo-1572490122747-3968b75bf699?q=80&w=600',
+                'Desserts': 'https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=600',
+                'Hot Chocolate': 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?q=80&w=600'
+            };
+            return imgs[category] || 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=600';
+        }
 
-        // --- STATE MANAGEMENT ---
-        let currentMainCategory = 'food';
-        let currentSubCategory = 'Sides';
+        const categories = [...new Set(products.map(p => p.category))];
+        let currentCategory = categories[0];
         let cart = [];
 
-        // --- HERO BANNERS ---
+        // --- BANNERS ARRAY (6 Specific Banners including User's Matcha Link) ---
         const banners = [
-            { src: 'margarita-pizza.png', tag: 'Bestseller', title: 'Margarita Pizza', price: 420, productId: 'f23' },
-            { src: 'tandoori-paneer-pizza.png', tag: 'Customer Choice', title: 'Tandoori Paneer Pizza', price: 480, productId: 'f24' },
-            { src: 'classic-cold-brew.png', tag: 'Refreshing', title: 'Classic Cold Brew', price: 220, productId: 'd1' },
-            { src: 'french-vanilla-latte.png', tag: 'Popular', title: 'French Vanilla Latte', price: 240, productId: 'c8' }
+            { src: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600', tag: 'Speciality', title: 'Espresso', price: 150, productId: 'hc1' },
+            { src: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1600', tag: 'Wood Fired', title: 'Margarita Pizza', price: 420, productId: 'pz1' },
+            { src: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=1600', tag: 'Indulge', title: 'Blueberry Cheesecake', price: 280, productId: 'ds1' },
+            { src: 'https://images.unsplash.com/photo-1749280447307-31a68eb38673?q=80&w=1600&auto=format&fit=crop', tag: 'Refreshing', title: 'Iced Matcha', price: 250, productId: 'ma1' },
+            { src: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1600', tag: 'Brewed 24H', title: 'Classic Cold Brew', price: 220, productId: 'cb1' },
+            { src: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1600', tag: 'Fresh Baked', title: 'Butter Croissant', price: 280, productId: 'ds9' }
         ];
 
         // --- HERO CAROUSEL ---
@@ -455,22 +405,19 @@
             carouselEl.innerHTML = banners.map((b, index) => {
                 return `
                 <div class="absolute inset-0 transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" id="slide-${index}">
-                    <img src="${b.src}" alt="${b.title}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/1600x900?text=Banner+${index+1}'">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/60 to-transparent flex items-end">
+                    <img src="${b.src}" alt="${b.title}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/1600x900/2c1e16/ffffff?text=Viola+Cafe'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent flex items-end">
                         <div class="p-6 md:p-12 lg:p-20 w-full pb-10 md:pb-16 flex flex-col justify-end">
-                            <span class="bg-brand-700 text-white text-xs md:text-sm font-extrabold px-5 md:px-6 py-2 rounded-full uppercase tracking-widest mb-4 inline-block w-max shadow-lg">${b.tag}</span>
-                            
+                            <span class="bg-brand-500 text-white text-xs md:text-sm font-extrabold px-5 md:px-6 py-2 rounded-full uppercase tracking-widest mb-4 inline-block w-max shadow-lg">${b.tag}</span>
                             <h2 class="fluid-h1 font-extrabold text-white mb-6 drop-shadow-lg leading-tight">${b.title}</h2>
-                            
-                            <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-6 mt-2 max-w-3xl">
+                            <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 md:gap-6 mt-2 max-w-lg">
                                 <div class="flex flex-1 items-center justify-between gap-4 bg-white/20 backdrop-blur-md p-3 pl-6 rounded-full border border-white/30 w-full sm:w-auto">
                                     <div class="flex flex-col items-start">
-                                        <span class="text-[10px] md:text-xs text-brand-100 uppercase font-bold tracking-widest">Price</span>
+                                        <span class="text-[10px] md:text-xs text-gray-200 uppercase font-bold tracking-widest">Order Now</span>
                                         <span class="text-2xl md:text-3xl text-white font-extrabold leading-none mt-1">₹${b.price}</span>
                                     </div>
-                                    <button onclick="addToCart('${b.productId}')" class="bg-brand-700 hover:bg-brand-600 text-white text-sm md:text-base font-extrabold px-6 py-3 rounded-full transition-all shadow-glow">
-                                        Add to Cart
+                                    <button onclick="addToCart('${b.productId}')" class="bg-brand-500 hover:bg-brand-600 text-white text-sm md:text-base font-extrabold px-6 py-3 rounded-full transition-all shadow-glow">
+                                        Add to Cart 
                                     </button>
                                 </div>
                             </div>
@@ -489,87 +436,63 @@
             });
         }
         function nextSlide() { currentSlide = (currentSlide + 1) % banners.length; showSlide(currentSlide); }
-        function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 4000); }
+        function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, 3500); }
 
-        // --- CATEGORY SWITCHING ---
-        function switchMainCategory(category) {
-            currentMainCategory = category;
-            currentSubCategory = subcategories[category][0];
-            
-            // Update main tabs
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.getElementById(`tab-${category}`).classList.add('active');
-            
-            // Render subcategories and products
-            renderSubcategories();
-            renderProducts();
-        }
-
-        function switchSubCategory(subCategory) {
-            currentSubCategory = subCategory;
-            renderSubcategories();
-            renderProducts();
-        }
-
-        function renderSubcategories() {
-            const container = document.getElementById('subcategory-container');
-            const subs = subcategories[currentMainCategory];
-            
-            container.innerHTML = subs.map(sub => `
-                <button onclick="switchSubCategory('${sub}')" 
-                    class="subcategory-btn px-5 md:px-8 py-2.5 md:py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 border-2 ${currentSubCategory === sub ? 'active bg-brand-700 text-white border-brand-700' : 'bg-white text-brand-700 border-brand-200 hover:border-brand-400'}">
-                    ${sub}
+        // --- MENU LOGIC ---
+        function renderCategories() {
+            const filterContainer = document.getElementById('category-filters');
+            filterContainer.innerHTML = categories.map(cat => `
+                <button onclick="setCategory('${cat}')" 
+                    class="px-5 py-2.5 rounded-full font-extrabold text-sm whitespace-nowrap transition-all duration-300 ${currentCategory === cat ? 'bg-brand-900 text-white shadow-md' : 'bg-white text-gray-500 hover:bg-brand-50 border border-gray-200'}">
+                    ${cat}
                 </button>
             `).join('');
         }
 
+        function setCategory(cat) {
+            currentCategory = cat;
+            renderCategories();
+            renderProducts();
+        }
+
+        // Updated render function to include Images for all 92 cards
         function renderProducts() {
-            const grid = document.getElementById('product-grid');
-            const filteredItems = allItems.filter(item => 
-                item.mainCategory === currentMainCategory && 
-                item.subCategory === currentSubCategory
-            );
-
-            if(filteredItems.length === 0) {
-                grid.innerHTML = '<div class="col-span-full text-center py-20 text-brand-400 text-xl font-bold">No items found</div>';
-                return;
-            }
-
-            grid.innerHTML = filteredItems.map(item => {
-                let cartItem = cart.find(c => c.id === item.id);
-                
+            const productGrid = document.getElementById('product-grid');
+            const filteredProducts = products.filter(p => p.category === currentCategory);
+            
+            productGrid.innerHTML = filteredProducts.map(p => {
+                let cartItem = cart.find(item => item.id === p.id);
                 let buttonUI = '';
+                
                 if (cartItem) {
                     buttonUI = `
-                    <div class="flex items-center justify-between bg-brand-100 rounded-full p-1.5 border border-brand-300 mt-2 shadow-inner">
-                        <button onclick="changeCartQty('${item.id}', -1)" class="w-12 h-12 flex justify-center items-center bg-white text-brand-700 hover:text-white hover:bg-brand-700 rounded-full text-2xl font-bold transition-all shadow-sm border border-brand-200">-</button>
-                        <span class="font-black text-xl md:text-2xl w-10 text-center text-brand-800">${cartItem.qty}</span>
-                        <button onclick="changeCartQty('${item.id}', 1)" class="w-12 h-12 flex justify-center items-center bg-white text-brand-700 hover:text-white hover:bg-brand-700 rounded-full text-2xl font-bold transition-all shadow-sm border border-brand-200">+</button>
+                    <div class="flex items-center justify-between bg-brand-50 rounded-full p-1.5 border border-brand-200 mt-2 shadow-inner">
+                        <button onclick="changeCartQty('${p.id}', -1)" class="w-12 h-12 flex justify-center items-center bg-white text-gray-700 hover:text-white hover:bg-brand-500 rounded-full text-2xl font-bold transition-all shadow-sm border border-brand-100">-</button>
+                        <span class="font-black text-xl md:text-2xl w-10 text-center text-brand-900">${cartItem.qty}</span>
+                        <button onclick="changeCartQty('${p.id}', 1)" class="w-12 h-12 flex justify-center items-center bg-white text-gray-700 hover:text-white hover:bg-brand-500 rounded-full text-2xl font-bold transition-all shadow-sm border border-brand-100">+</button>
                     </div>`;
                 } else {
                     buttonUI = `
-                    <button onclick="addToCart('${item.id}')" class="w-full mt-2 bg-brand-900 hover:bg-brand-700 text-white font-extrabold text-lg md:text-xl py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-glow flex justify-center items-center gap-3">
+                    <button onclick="addToCart('${p.id}')" class="w-full mt-2 bg-brand-900 hover:bg-brand-600 text-white font-extrabold text-lg md:text-xl py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-glow flex justify-center items-center gap-3">
                         Add to Cart
                     </button>`;
                 }
 
                 return `
-                <div class="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-premium hover:shadow-premium-hover border border-brand-100 overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col group p-3 relative">
-                    <div class="relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem]">
-                        <img src="${item.img}" alt="${item.name}" class="w-full h-72 sm:h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110" onerror="this.src='https://via.placeholder.com/600x600?text=${item.name}'">
-                        <div class="absolute top-4 left-4">
-                            <span class="bg-white/95 text-brand-900 text-xs md:text-sm font-extrabold px-4 py-1.5 rounded-full shadow-md">${item.subCategory}</span>
-                        </div>
+                <div class="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-premium hover:shadow-premium-hover border border-gray-100 overflow-hidden hover:-translate-y-2 transition-all duration-500 flex flex-col group relative h-full">
+                    <div class="w-full h-48 sm:h-56 overflow-hidden relative">
+                        <img src="${getCategoryImg(p.category)}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur text-brand-900 text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">${p.category}</div>
                     </div>
-                    
-                    <div class="p-6 md:p-8 pt-6 flex-1 flex flex-col">
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-brand-950 mb-2 truncate">${item.name}</h3>
-                        <p class="text-sm text-brand-700 mb-3 line-clamp-2">${item.description}</p>
-                        <p class="text-3xl md:text-4xl font-black text-brand-700 mb-6">₹${item.price}</p>
-                        
-                        <div class="mt-auto">
+                    <div class="p-5 md:p-6 flex-1 flex flex-col justify-between bg-white relative z-10 -mt-4 rounded-t-[2rem] md:rounded-t-[2.5rem]">
+                        <div>
+                            <div class="flex justify-between items-start mb-2 gap-4">
+                                <h3 class="text-xl md:text-2xl font-extrabold text-gray-900 leading-tight">${p.name}</h3>
+                                <p class="text-2xl md:text-3xl font-black text-brand-600">₹${p.price}</p>
+                            </div>
+                            ${p.desc ? `<p class="text-sm text-gray-500 font-medium mb-6 leading-relaxed">${p.desc}</p>` : '<div class="mb-6"></div>'}
+                        </div>
+                        <div class="mt-auto pt-4 border-t border-brand-50">
                             ${buttonUI}
                         </div>
                     </div>
@@ -578,45 +501,44 @@
             }).join('');
         }
 
-        function addToCart(itemId) {
-            let item = allItems.find(p => p.id === itemId);
+        // --- CART LOGIC ---
+        function addToCart(id) {
+            let product = products.find(p => p.id === id);
+            let existing = cart.find(item => item.id === id);
             
-            let existing = cart.find(item => item.id === itemId);
             if(existing) {
                 existing.qty += 1;
             } else {
                 cart.push({
-                    id: item.id,
-                    name: item.name,
-                    price: item.price,
-                    img: item.img,
-                    subCategory: item.subCategory,
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    category: product.category,
                     qty: 1
                 });
             }
             updateCart();
             animateCartIcon();
-            renderProducts();
         }
 
         function animateCartIcon() {
             const cartIconBtn = document.getElementById('cart-count').parentElement;
-            cartIconBtn.classList.add('scale-110', 'bg-brand-700', 'shadow-glow');
-            setTimeout(() => { cartIconBtn.classList.remove('scale-110', 'bg-brand-700', 'shadow-glow'); }, 300);
+            cartIconBtn.classList.add('scale-110', 'bg-brand-600', 'shadow-glow');
+            setTimeout(() => { cartIconBtn.classList.remove('scale-110', 'bg-brand-600', 'shadow-glow'); }, 300);
         }
 
-        function changeCartQty(itemId, change) {
-            let item = cart.find(i => i.id === itemId);
+        function changeCartQty(id, change) {
+            let item = cart.find(i => i.id === id);
             if(item) {
                 item.qty += change;
-                if(item.qty <= 0) cart = cart.filter(i => i.id !== itemId);
+                if(item.qty <= 0) cart = cart.filter(i => i.id !== id);
                 updateCart();
-                renderProducts();
             }
         }
 
         function updateCart() {
             document.getElementById('cart-count').innerText = cart.reduce((tot, item) => tot + item.qty, 0);
+            renderProducts(); 
             
             const cartItemsEl = document.getElementById('cart-items');
             const checkoutForm = document.getElementById('checkout-form');
@@ -624,11 +546,11 @@
 
             if(cart.length === 0) {
                 cartItemsEl.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center text-brand-400 mt-10 md:mt-20">
-                        <div class="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-brand-100">
-                            <i class="fas fa-shopping-basket text-4xl md:text-6xl text-brand-200"></i>
+                    <div class="h-full flex flex-col items-center justify-center text-gray-400 mt-10 md:mt-20">
+                        <div class="w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-gray-100">
+                            <i class="fas fa-coffee text-4xl md:text-6xl text-gray-200"></i>
                         </div>
-                        <p class="font-bold text-xl md:text-2xl text-brand-400">Your cart is empty</p>
+                        <p class="font-bold text-xl md:text-2xl text-gray-400">Your cart is empty</p>
                     </div>`;
                 checkoutForm.classList.add('hidden');
                 document.getElementById('cart-total').innerText = '₹0';
@@ -641,19 +563,19 @@
                 totalAmount += itemTotal;
                 
                 return `
-                <div class="bg-white p-3 md:p-4 rounded-[1.5rem] md:rounded-[2rem] border border-brand-100 shadow-sm flex items-center gap-3 md:gap-4 transition-all hover:shadow-md">
-                    <img src="${item.img}" alt="${item.name}" class="w-20 h-20 md:w-24 md:h-24 object-contain bg-brand-50 p-1.5 rounded-xl md:rounded-2xl shadow-sm border border-brand-100 shrink-0" onerror="this.src='https://via.placeholder.com/150?text=IMG'">
+                <div class="bg-white p-4 md:p-5 rounded-[1.5rem] md:rounded-[2rem] border border-gray-100 shadow-sm flex items-center gap-3 transition-all hover:shadow-md">
+                    <img src="${getCategoryImg(item.category)}" alt="${item.name}" class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-xl shadow-sm shrink-0">
                     
                     <div class="flex-1 min-w-0 flex flex-col justify-center items-start">
-                        <h4 class="font-extrabold text-brand-950 text-lg md:text-xl truncate leading-tight w-full">${item.name}</h4>
-                        <span class="text-brand-600 font-semibold text-[10px] md:text-xs bg-brand-100 px-2 py-0.5 rounded-md mt-1 border border-brand-200">${item.subCategory}</span>
-                        <div class="text-brand-950 font-black text-lg md:text-xl mt-1">₹${itemTotal}</div>
+                        <h4 class="font-extrabold text-gray-900 text-lg truncate w-full">${item.name}</h4>
+                        <span class="text-gray-500 font-semibold text-[10px] md:text-xs bg-gray-100 px-2 py-0.5 rounded-md mt-1 border border-gray-200">${item.category}</span>
+                        <div class="text-brand-900 font-black text-lg md:text-xl mt-2">₹${itemTotal}</div>
                     </div>
                     
-                    <div class="flex flex-row items-center bg-brand-50 rounded-full border border-brand-200 p-1 shrink-0">
-                        <button onclick="changeCartQty('${item.id}', -1)" class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full text-brand-700 hover:text-white hover:bg-brand-700 font-bold text-lg md:text-xl shadow-sm transition-colors flex items-center justify-center">-</button>
-                        <span class="w-8 md:w-10 text-center text-base md:text-lg font-extrabold text-brand-950">${item.qty}</span>
-                        <button onclick="changeCartQty('${item.id}', 1)" class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full text-brand-700 hover:text-white hover:bg-brand-700 font-bold text-lg md:text-xl shadow-sm transition-colors flex items-center justify-center">+</button>
+                    <div class="flex flex-row items-center bg-gray-50 rounded-full border border-gray-200 p-1 shrink-0">
+                        <button onclick="changeCartQty('${item.id}', -1)" class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full text-gray-600 hover:text-white hover:bg-brand-900 font-bold text-lg shadow-sm transition-colors flex items-center justify-center">-</button>
+                        <span class="w-8 md:w-10 text-center text-base md:text-lg font-extrabold text-gray-900">${item.qty}</span>
+                        <button onclick="changeCartQty('${item.id}', 1)" class="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full text-gray-600 hover:text-white hover:bg-brand-900 font-bold text-lg shadow-sm transition-colors flex items-center justify-center">+</button>
                     </div>
                 </div>
                 `;
@@ -679,58 +601,56 @@
             }
         }
 
-        // WhatsApp Checkout
+        // --- WHATSAPP CHECKOUT ---
         document.getElementById('checkout-form').addEventListener('submit', function(e) {
             e.preventDefault();
             if(cart.length === 0) return;
 
             const name = document.getElementById('cust-name').value;
             const phone = document.getElementById('cust-phone').value;
+            const address = document.getElementById('cust-address').value;
             let totalAmount = 0;
             
-            // REPLACE THIS WITH YOUR WHATSAPP NUMBER
-            const whatsappNumber = '91XXXXXXXXXX'; // Example: 919876543210
-            
             let orderText = `*==========================*\n`;
-            orderText += `    *VIOLA PIZZERIA - ORDER* \n`;
+            orderText += `      *VIOLA CAFE - NEW ORDER* \n`;
             orderText += `*==========================*\n\n`;
             
             orderText += `*👤 CUSTOMER DETAILS:*\n`;
             orderText += `*Name:* ${name}\n`;
-            orderText += `*Phone:* ${phone}\n\n`;
+            orderText += `*Phone:* ${phone}\n`;
+            orderText += `*Table/Address:* ${address}\n\n`;
             
             orderText += `*--------------------------*\n`;
-            orderText += `*📦 ORDER DETAILS:*\n`;
+            orderText += `*📦 ORDER SUMMARY:*\n`;
             
             cart.forEach((item, i) => {
                 let itemTotal = item.price * item.qty;
                 totalAmount += itemTotal;
                 
-                orderText += `*${i + 1}. ${item.name}* (${item.subCategory})\n`;
-                orderText += `    Qty: ${item.qty} x ₹${item.price} = *₹${itemTotal}*\n`;
+                orderText += `*${i + 1}. ${item.name}*\n`;
+                orderText += `   ${item.qty} x ₹${item.price} = *₹${itemTotal}*\n`;
             });
             
             orderText += `*--------------------------*\n`;
-            orderText += `*🧾 TOTAL BILL: ₹${totalAmount}*\n`;
+            orderText += `*🧾 TOTAL AMOUNT: ₹${totalAmount}*\n`;
             orderText += `*==========================*\n\n`;
             orderText += `Please confirm my order!`;
 
-            const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(orderText)}`;
+            const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(orderText)}`;
             window.open(waLink, '_blank');
             
             cart = [];
             updateCart();
             this.reset();
             toggleCart();
-            renderProducts();
         });
 
         // Initialize
         renderBanners();
-        renderSubcategories();
-        renderProducts();
+        renderCategories();
+        renderProducts(); 
         resetInterval();
 
-  </script>
+    </script>
 </body>
 </html>
